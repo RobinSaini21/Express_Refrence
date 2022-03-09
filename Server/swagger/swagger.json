@@ -1,0 +1,664 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "Swagger Doc For Find-Apps Api ",
+      "version": "1.0.0",
+      "title": "Lonash Food app"
+    },
+    "tags": [
+      {
+        "name": "List Of API",
+        "description": "",
+        "externalDocs": {}
+      }
+    ],
+    "securityDefinitions":{
+      "Bearer":{
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+      }
+      },
+    "paths": {
+      
+      "/api/user/sign-up": {
+        "post": {
+          "tags": [
+            "Authentication"
+          ],
+          "summary": " New User ",
+          "description": "Sign-UP  ",
+          "operationId": "signup",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/sign-up/google-facebook": {
+        "post": {
+          "tags": [
+            "Authentication"
+          ],
+          "summary": " New User ",
+          "description": "Sign-UP With Socials ",
+          "operationId": "signup",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register-with-type"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register-with-type"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/login": {
+        "post": {
+          "tags": [
+            "Authentication"
+          ],
+          "summary": "Login",
+          "description": "Email,Password  Required  ",
+          "operationId": "Login",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/forget-password": {
+        "post": {
+          "tags": [
+            "Authentication"
+          ],
+          "summary": "Login",
+          "description": "Email,Password,Device-token, Device-type Required  ",
+          "operationId": "Login",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forget-Password"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forget-Password"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/get-profile": {
+        "get": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": " My profile data",
+          "description": "Customers ",
+          "operationId": "Users",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "responses": {}
+        }
+      },
+      "/api/user/change-password": {
+        "post": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": " Password Updation",
+          "description": " old password is required  ",
+          "operationId": "Login",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Change-Password"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Change-Password"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/update": {
+        "post": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": " Data updation",
+          "description": "Email,Password,Device-token, Device-type Required  ",
+          "operationId": "Login",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Update"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Update"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/search-item": {
+        "post": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": " Search items you need",
+          "description": " Search items you need ",
+          "operationId": "Login",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Search"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Search"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/user/my-cart": {
+        "get": {
+          "tags": [
+            "Customers"
+          ],
+          "summary": " My cart",
+          "description": " Items in my cart ",
+          "operationId": "Login",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          
+          "responses": {}
+        }
+      },
+
+      "/api/seller/signUp": {
+        "post": {
+          "tags": [
+            "Sellers"
+          ],
+          "summary": " Sign -Up for new Service Provider ",
+          "description": "Sign-UP  ",
+          "operationId": "signup",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seller"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seller"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/seller/add-account-details": {
+        "post": {
+          "tags": [
+            "Sellers"
+          ],
+          "summary": " Seller account details ",
+          "description": "Sign-UP  ",
+          "operationId": "signup",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seller-Account"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seller-Account"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/seller/add-item": {
+        "post": {
+          "tags": [
+            "Sellers"
+          ],
+          "summary": " Seller can add items into menu ",
+          "description": "Set-UP  ",
+          "operationId": "signup",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Add-Item"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Add-Item"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {}
+        }
+      },
+      "/api/seller/get-category": {
+        "get": {
+          "tags": [
+            "Sellers"
+          ],
+          "summary": "Available categories",
+          "description": "Seller add items ",
+          "operationId": "Users",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "responses": {}
+        }
+      },
+      
+      "/api/seller/available-staus": {
+        "get": {
+          "tags": [
+            "Sellers"
+          ],
+          "summary": "Change availability status",
+          "description": "Seller home page ",
+          "operationId": "Users",
+          "security":[
+            {
+            "bearerAuth":[]
+            }
+            ],
+          "responses": {}
+        }
+      }
+
+    },
+
+    "externalDocs": {
+      "description": "Find out more about Swagger",
+      "url": "http://swagger.io"
+    },
+
+    "servers": [
+        
+      {
+        "url": "http://192.168.1.99:3030"
+      },
+      {
+        "url": "http://localhost:3030"
+      }
+    ],
+
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+
+      },
+      "schemas": {
+
+        "Register": {
+          "type": "object",
+          "required": [
+            "email",
+            "name",
+            "phone",
+            "password",
+            "confirmPassword",
+            "lat",
+            "lng"
+            
+          ],
+          "properties": {
+            "name": {
+                "type": "string",
+                "example": "abcde"
+              },
+            "email": {
+              "type": "string",
+              "example": "abc@gmail.com"
+            },
+            "phone": {
+              "type": "string",
+              "example": "8123456789"
+            },
+            "password": {
+              "type": "string",
+              "example": "Password@123"
+            },
+            "confirmPassword": {
+              "type": "string",
+              "example": "Password@123"
+            },
+            "lat": {
+              "type": "number",
+              "example": 70.5656
+            },
+            "lng": {
+              "type": "number",
+              "example": 30.2323
+            }
+          }
+        },
+
+        "Login": {
+          "type": "object",
+          "required": [
+            "email",
+            "password"
+  
+          ],
+          "properties": {
+            "email": {
+              "type": "string",
+              "example": "sahil1@gmail.com"
+            },
+            "password": {
+              "type": "string",
+              "example": "Password@123"
+            }
+          }
+        },
+        "Search": {
+          "type": "object",
+          "required": [
+            "text"
+  
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "example": "s"
+            }
+          }
+        },
+        
+        "Seller": {
+          "type": "object",
+          "required": [
+            "pan_number",
+            "adhar_number",
+            "street_name",
+            "city",
+            "state",
+            "pin"
+            
+          ],
+          "properties": {
+
+            "pan_number": {
+                "type": "Number",
+                "example": 1234567890
+              },
+            "adhar_number": {
+              "type": "Number",
+              "example": 1234567890123456
+            },
+            "street_name": {
+              "type": "string",
+              "example": "Nearbyyourofficebvidsbib"
+            },
+            "city": {
+              "type": "string",
+              "example": "Chandigarh"
+            },
+            "state": {
+              "type": "string",
+              "example": "Punjab"
+            },
+            "pin": {
+              "type": "string",
+              "example": "160071"
+            }
+            
+          }
+        },
+
+        "Register-with-type": {
+          "type": "object",
+          "required": [
+           "login_type"
+          ],
+          "properties": {
+            "login_type": {
+                "type": "Number",
+                "example":1
+              },
+            "googleId": {
+              "type": "Number",
+              "example": 264654
+            },
+            
+            "facebookId": {
+              "type": "Number",
+              "example": 121651
+            }
+        
+          }
+        },
+        "Add-Item": {
+          "type": "object",
+          "required": [
+            "item_name",
+            "cat_name",
+            "price"
+            
+          ],
+          "properties": {
+            "item_name": {
+                "type": "string",
+                "example": "abcde"
+              },
+            "cat_name": {
+              "type": "string",
+              "example": "abc@gmail.com"
+            },
+            "price": {
+              "type": "string",
+              "example": "Password@123"
+            }
+          }
+        },
+        "Change-Password": {
+          "type": "object",
+          "required": [
+            "old_password",
+            "password",
+            "confirmPassword"
+            
+          ],
+          "properties": {
+            "old_password": {
+                "type": "string",
+                "example": "abcde"
+              },
+            "password": {
+              "type": "string",
+              "example": "Password@123"
+            },
+            "confirmPassword": {
+              "type": "string",
+              "example": "Password@123"
+            }
+          }
+        },
+        "Forget-Password": {
+          "type": "object",
+          "required": [
+            "email"
+            
+          ],
+          "properties": {
+            "email": {
+              "type": "string",
+              "example": "sahil111@"
+            }
+          }
+        },
+        "Update": {
+          "type": "object",
+          "required": [
+            "email",
+            "name",
+            "phone"
+            
+          ],
+          "properties": {
+            "name": {
+                "type": "string",
+                "example": "abcde"
+              },
+            "email": {
+              "type": "string",
+              "example": "abc@gmail.com"
+            },
+            "phone": {
+              "type": "string",
+              "example": "8123456789"
+            }
+          
+          }
+        },
+        "Seller-Account": {
+          "type": "object",
+          "required": [
+            "account_number",
+            "bank_name",
+            "branch_code",
+            "tc"
+            
+          ],
+          "properties": {
+            "account_number": {
+                "type": "Number",
+                "example": 5626565151
+              },
+            "bank_name": {
+              "type": "string",
+              "example": "abc"
+            },
+            "branch_code": {
+              "type": "Number",
+              "example": 4564
+            },
+            "tc": {
+              "type": "Number",
+              "example": 1
+            }
+          }
+        }
+        
+      
+      }
+    }
+  }

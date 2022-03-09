@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="../public/style.css">
+	<%-include('include/style')%>
+</head>
+
+<body>
+
+
+	<div class="login-wrap">
+		<div class="login-html">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+			<div class="login-form">
+				
+			<%-include('include/login')%>
+			<%-include('include/signup')%>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>
